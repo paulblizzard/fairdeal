@@ -9,8 +9,20 @@
   </head>
 
   <body>
-  	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+      <div style='float: right;'>
+        Logged in as <%= current_user.email %> |
+          <%= link_to "Logout", :destroy_user_session, method: :delete %> 
+        </div>
+    <% else %>
+      <div style='float: right;'>
+        <%= link_to "Login", :new_user_session, method: :get %> 
+        <%= link_to "Register", :new_user_registration, method: :get %> 
+      </div>
+    <% end %>
+
+    <p class="notice"><%= notice %></p>
+    <% if notice.nil? %><p class="alert"><%= alert %></p><% end %>
 
     <%= yield %>
   </body>
