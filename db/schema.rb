@@ -10,12 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930184628) do
+ActiveRecord::Schema.define(version: 20160930203520) do
 
   create_table "dealings", force: :cascade do |t|
     t.date     "due_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "gender"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "email_pref"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_settings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,6 +52,17 @@ ActiveRecord::Schema.define(version: 20160930184628) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "works", force: :cascade do |t|
+    t.string   "isbn"
+    t.string   "title"
+    t.string   "author"
+    t.string   "format"
+    t.date     "pub_date"
+    t.integer  "pages"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
