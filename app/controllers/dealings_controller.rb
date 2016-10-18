@@ -1,5 +1,4 @@
 class DealingsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_dealing, only: [:show, :edit, :update, :destroy]
 
   # GET /dealings

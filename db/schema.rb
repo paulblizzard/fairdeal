@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930203520) do
+ActiveRecord::Schema.define(version: 20161018213446) do
 
   create_table "dealings", force: :cascade do |t|
     t.date     "due_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "email"
+  end
+
+  create_table "dealings_factors", id: false, force: :cascade do |t|
+    t.integer "dealing_id"
+    t.integer "factor_id"
+    t.index ["dealing_id"], name: "index_dealings_factors_on_dealing_id"
+    t.index ["factor_id"], name: "index_dealings_factors_on_factor_id"
+  end
+
+  create_table "factors", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,6 +39,28 @@ ActiveRecord::Schema.define(version: 20160930203520) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "factor_id"
+    t.integer  "response_id"
+    t.index ["factor_id"], name: "index_questions_on_factor_id"
+    t.index ["response_id"], name: "index_questions_on_response_id"
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "factor_id"
+    t.index ["factor_id"], name: "index_responses_on_factor_id"
+    t.index ["question_id"], name: "index_responses_on_question_id"
   end
 
   create_table "settings", force: :cascade do |t|
@@ -63,6 +98,8 @@ ActiveRecord::Schema.define(version: 20160930203520) do
     t.integer  "pages"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "dealing_id"
+    t.index ["dealing_id"], name: "index_works_on_dealing_id"
   end
 
 end
