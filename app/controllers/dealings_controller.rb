@@ -15,6 +15,10 @@ class DealingsController < ApplicationController
   # GET /dealings/new
   def new
     @dealing = Dealing.new
+
+    Factor.all.each do |f| 
+      @dealing.factors << f
+    end
   end
 
   # GET /dealings/1/edit

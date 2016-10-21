@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_factor_path(@factor) %> |
-<%= link_to 'Back', factors_path %>
+<div class="factor">
+	<%= content_tag :span, "Factor: #{@factor.title}", class: "factor-title" %>
+
+	<div class="questions">
+		<%= render @factor.questions %>
+	</div>
+
+</div>
+
+
+
+

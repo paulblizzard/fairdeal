@@ -1,8 +1,8 @@
-class CreateResponses < ActiveRecord::Migration[5.0]
+class CreateAnswers < ActiveRecord::Migration[5.0]
   def change
-    create_table :responses do |t|
+    create_table :answers do |t|
       t.string :title
-      t.text :content
+      t.string :content
       t.references :question, foreign_key: true
 
       t.timestamps

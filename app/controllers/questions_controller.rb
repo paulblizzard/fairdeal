@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_action :set_factor, only: [:show, :edit, :update, :destroy]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   # GET /questions
@@ -24,11 +25,11 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
-    @question = Question.new(question_params)
+    @question = @factor.questions.new(question_params)
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.html { redirect_to @factor, notice: 'Question was successfully created.' }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
+        format.html { redirect_to @factor, notice: 'Question was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit }
@@ -62,9 +63,13 @@ class QuestionsController < ApplicationController
   end
 
   private
+    def set_factor
+      @factor = Factor.find(params[:factor_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_question
-      @question = Question.find(params[:id])
+      @question = @factor.questions.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,7 +1,9 @@
-Rails.application.routes.draw do
-  resources :factors
-  resources :responses
-  resources :questions
+Rails.application.routes.draw do  
+  resources :factors do
+      resources :questions
+  end
+
+  resources :answers
   resources :settings
   resources :profiles
   resources :works

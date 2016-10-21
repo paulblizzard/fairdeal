@@ -12,6 +12,7 @@
   <tbody>
     <% @factors.each do |factor| %>
       <tr>
+      <td><%= factor.title %> </td>
         <td><%= link_to 'Show', factor %></td>
         <td><%= link_to 'Edit', edit_factor_path(factor) %></td>
         <td><%= link_to 'Destroy', factor, method: :delete, data: { confirm: 'Are you sure?' } %></td>

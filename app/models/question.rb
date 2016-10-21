@@ -1,4 +1,4 @@
 class Question < ApplicationRecord
-	has_one :response
+	has_one :answer
 
 end

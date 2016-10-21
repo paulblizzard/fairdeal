@@ -10,12 +10,12 @@
 
   <body>
     <% if user_signed_in? %>
-      <div style='float: right;'>
+      <div class="auth_links">
         Signed in as <%= current_user.email %> |
           <%= link_to "Sign out", :destroy_user_session, method: :delete %> 
         </div>
     <% else %>
-      <div style='float: right;'>
+      <div class="auth_links">
         <%= link_to "Sign in", :new_user_session, method: :get %> 
         <%= link_to "Register", :new_user_registration, method: :get %> 
       </div>
@@ -23,7 +23,6 @@
 
     <p class="notice"><%= notice %></p>
     <% if notice.nil? %><p class="alert"><%= alert %></p><% end %>
-
     <%= yield %>
   </body>
 </html>

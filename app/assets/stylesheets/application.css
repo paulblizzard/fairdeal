@@ -13,3 +13,47 @@
  *= require_tree .
  *= require_self
  */
+ .auth_links {
+ 	background: white;
+	margin: 15px;
+	padding: 5px;
+	border: 1px solid;
+	border-radius: 5px;
+	width: 300 px;
+ }
+
+.factor {
+	background: lightyellow;
+	margin: 15px;
+	padding: 5px;
+	border: 1px solid;
+	border-radius: 5px;
+	width: 300 px;
+}
+
+.question {
+	background: lightblue;
+	margin: 15px;
+	padding: 5px;
+	border: 1px solid;
+	border-radius: 5px;
+	width: 300 px;
+}
+
+.answer {
+	background: lightgreen;
+	margin: 15px;
+	padding: 5px;
+	border: 1px solid;
+	border-radius: 5px;
+	width: 300 px;
+}
+
+.answer-form {
+	background: lightgray;
+	margin: 15px;
+	padding: 5px;
+	border: 1px solid;
+	border-radius: 5px;
+	width: 300 px;
+}

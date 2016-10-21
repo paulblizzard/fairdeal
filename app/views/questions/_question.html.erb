@@ -1,0 +1,61 @@
+<div class="question">
+	<div>
+		<%= content_tag :span, "Question:", class: "question-title" %>
+	</div>
+	<div><%= simple_format question.content %></div>
+</div>
+
+<div class="answer">
+	<div>
+		<%= content_tag :span, "Answer:", class: "answer-title" %>
+	</div>
+	<%= if question.answer.present?
+			simple_format question.answer.content 
+		else
+		 	simple_format "No answer given." 
+		end %>	 
+</div>
+
+<div class="answer-form">
+	<% 	answer = question.answer
+		
+		if answer.nil?
+			answer = question.build_answer 
+		end %>
+
+	<%= form_for(answer) do |f| %>
+	  <% if answer.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+
+	      <ul>
+	      <% answer.errors.full_messages.each do |message| %>
+	        <li><%= message %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+	  <div class="field">
+	    <%= f.hidden_field :title %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.label :content %>
+	    <%= f.text_area :content, placeholder: answer.content %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.hidden_field :question_id %>
+	  </div>
+
+	  <div class="field">
+	  	<%= f.label :dealing_id %>
+	    <%= f.text_field :dealing_id, placeholder: @dealing %>
+	  </div>
+
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+	<% end %>
+</div>

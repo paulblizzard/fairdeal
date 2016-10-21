@@ -2,10 +2,10 @@
 
 one:
   title: MyString
-  content: MyText
+  content: MyString
   question: one
 
 two:
   title: MyString
-  content: MyText
+  content: MyString
   question: two
