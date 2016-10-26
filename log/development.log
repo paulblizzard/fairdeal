@@ -5385,3 +5385,1724 @@ app/controllers/answers_controller.rb:72:in `set_dealing'
   Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
   Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (91.1ms)
+Started PATCH "/answers/19" for ::1 at 2016-10-21 16:03:27 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NpO5HELvK3/X+IdkjpBPLOuQ8hGD2nE19xZh2JS008q8H7B3EdjhUre6RhN1cl6ty9gqW8W5zF/S8wyGHiow+Q==", "answer"=>{"title"=>"", "content"=>"abcdfdfd", "question_id"=>"20", "dealing_id"=>""}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.9ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 53ms (ActiveRecord: 3.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Dealing with 'id'=):
+  
+app/controllers/answers_controller.rb:72:in `set_dealing'
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.7ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (92.1ms)
+Started GET "/dealings" for ::1 at 2016-10-21 16:19:24 -0700
+Processing by DealingsController#index as HTML
+  Rendering dealings/index.html.erb within layouts/application
+  [1m[36mDealing Load (0.6ms)[0m  [1m[34mSELECT "dealings".* FROM "dealings"[0m
+  Rendered dealings/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 67ms (Views: 63.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/dealings/new" for ::1 at 2016-10-21 16:19:28 -0700
+Processing by DealingsController#new as HTML
+  [1m[36mFactor Load (1.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors"[0m
+  Rendering dealings/new.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (10.8ms)
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (26.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.0ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.2ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (74.7ms)
+  Rendered dealings/new.html.erb within layouts/application (90.4ms)
+Completed 200 OK in 223ms (Views: 174.6ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/dealings/new" for ::1 at 2016-10-21 16:31:15 -0700
+Processing by DealingsController#new as HTML
+  [1m[36mFactor Load (0.7ms)[0m  [1m[34mSELECT "factors".* FROM "factors"[0m
+  Rendering dealings/new.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (5.1ms)
+  Rendered dealings/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 93ms (Views: 54.6ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/dealings" for ::1 at 2016-10-21 16:31:18 -0700
+Processing by DealingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sqq7IC2yXe8r4fl9aYWv6ZUIka1SfawbG32UEDZd2NI4JrJLfoWXwkujOAqSZ75otUBJ5xQeEXE+mPlOvMM74Q==", "dealing"=>{"due_date(1i)"=>"2016", "due_date(2i)"=>"10", "due_date(3i)"=>"21"}, "commit"=>"Create Dealing"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "dealings" ("due_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["due_date", Fri, 21 Oct 2016], ["created_at", 2016-10-21 23:31:18 UTC], ["updated_at", 2016-10-21 23:31:18 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/dealings/1
+Completed 302 Found in 13ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/dealings/1" for ::1 at 2016-10-21 16:31:18 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  Rendered dealings/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 44ms (Views: 40.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dealings/1/edit" for ::1 at 2016-10-21 16:31:23 -0700
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (4.8ms)
+  [1m[36mFactor Load (2.0ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dealings/edit.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 62ms (Views: 55.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/dealings/1/edit" for ::1 at 2016-10-21 16:31:59 -0700
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (3.1ms)
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dealings/edit.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 49ms (Views: 45.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dealings/1/edit" for ::1 at 2016-10-21 16:32:00 -0700
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (3.7ms)
+  [1m[36mFactor Load (0.1ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dealings/edit.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 56ms (Views: 53.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dealings/1/edit" for ::1 at 2016-10-21 16:32:23 -0700
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.5ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (4.1ms)
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dealings/edit.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 50ms (Views: 46.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/dealings" for ::1 at 2016-10-21 16:32:25 -0700
+Processing by DealingsController#index as HTML
+  Rendering dealings/index.html.erb within layouts/application
+  [1m[36mDealing Load (0.3ms)[0m  [1m[34mSELECT "dealings".* FROM "dealings"[0m
+  Rendered dealings/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 54ms (Views: 48.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dealings/1/edit" for ::1 at 2016-10-21 16:32:33 -0700
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (1.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (6.4ms)
+  [1m[36mFactor Load (0.3ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dealings/edit.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 82ms (Views: 75.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/dealings/new" for ::1 at 2016-10-21 16:33:39 -0700
+Processing by DealingsController#new as HTML
+  [1m[36mFactor Load (0.3ms)[0m  [1m[34mSELECT "factors".* FROM "factors"[0m
+  Rendering dealings/new.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (4.5ms)
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (1.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (24.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.8ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.9ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.6ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.2ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.2ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (78.5ms)
+  Rendered dealings/new.html.erb within layouts/application (90.6ms)
+Completed 200 OK in 156ms (Views: 134.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/dealings" for ::1 at 2016-10-21 16:34:34 -0700
+Processing by DealingsController#index as HTML
+  Rendering dealings/index.html.erb within layouts/application
+  [1m[36mDealing Load (0.7ms)[0m  [1m[34mSELECT "dealings".* FROM "dealings"[0m
+  Rendered dealings/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 71ms (Views: 65.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/dealings/1/edit" for ::1 at 2016-10-21 16:34:35 -0700
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.6ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (6.5ms)
+  [1m[36mFactor Load (0.3ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dealings/edit.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 87ms (Views: 81.1ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/dealings/1" for ::1 at 2016-10-21 16:34:41 -0700
+Processing by DealingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ml+X07FrUeJyTXh+pGrmOVeCh37wqLiNqtSjFl5dZF0N+S/5N86HoGqYo197Y3g60J2K6MGegKez9mQ7j+FxzA==", "dealing"=>{"due_date(1i)"=>"2016", "due_date(2i)"=>"10", "due_date(3i)"=>"21"}, "commit"=>"Update Dealing", "id"=>"1"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/dealings/1
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/dealings/1" for ::1 at 2016-10-21 16:34:41 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  Rendered dealings/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 59ms (Views: 55.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dealings/1" for ::1 at 2016-10-21 16:35:11 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dealings/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dealings/1" for ::1 at 2016-10-21 16:35:19 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  Rendered dealings/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/dealings/1" for ::1 at 2016-10-21 16:35:21 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  Rendered dealings/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 46ms (Views: 43.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dealings/1/edit" for ::1 at 2016-10-21 16:35:24 -0700
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (4.6ms)
+  Rendered dealings/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 68ms (Views: 63.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dealings/1/edit" for ::1 at 2016-10-21 16:38:02 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (31.8ms)
+  Rendered dealings/edit.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 559ms (Views: 515.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/dealings/1" for ::1 at 2016-10-21 16:38:07 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.7ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dealings/show.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 90ms (Views: 83.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/dealings/1" for ::1 at 2016-10-21 16:38:50 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dealings/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 70ms (Views: 67.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dealings" for ::1 at 2016-10-21 16:40:29 -0700
+Processing by DealingsController#index as HTML
+  Rendering dealings/index.html.erb within layouts/application
+  [1m[36mDealing Load (0.4ms)[0m  [1m[34mSELECT "dealings".* FROM "dealings"[0m
+  Rendered dealings/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 66ms (Views: 54.9ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/dealings/1" for ::1 at 2016-10-21 16:40:32 -0700
+Processing by DealingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"R/8FmHMpQHthSGZ+WtwbHKuPRUL/MZkRSPz+MgC+W6DNcwzzIB6KVgEKpwmhPgqdi8edCLlSJHttGZNsiiC4kw==", "id"=>"1"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "dealings_factors" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "dealings" WHERE "dealings"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/dealings
+Completed 302 Found in 21ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/dealings" for ::1 at 2016-10-21 16:40:32 -0700
+Processing by DealingsController#index as HTML
+  Rendering dealings/index.html.erb within layouts/application
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT "dealings".* FROM "dealings"[0m
+  Rendered dealings/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 51ms (Views: 47.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/dealings/new" for ::1 at 2016-10-21 16:40:33 -0700
+Processing by DealingsController#new as HTML
+  Rendering dealings/new.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (6.4ms)
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dealings/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 78ms (Views: 74.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/dealings" for ::1 at 2016-10-21 16:40:34 -0700
+Processing by DealingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kWIOdYaxpx6OxpV0tMi9sR70Q2IYQ9Z36SIEXPIogV5pq1S5Vm3N3uouvFQiPaOkGDgr/eGss4an1ZSwRUvY/g==", "dealing"=>{"due_date(1i)"=>"2016", "due_date(2i)"=>"10", "due_date(3i)"=>"21"}, "commit"=>"Create Dealing"}
+  [1m[36mFactor Load (0.3ms)[0m  [1m[34mSELECT "factors".* FROM "factors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dealings" ("due_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["due_date", Fri, 21 Oct 2016], ["created_at", 2016-10-21 23:40:34 UTC], ["updated_at", 2016-10-21 23:40:34 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 2], ["factor_id", 19]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 2], ["factor_id", 20]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 2], ["factor_id", 21]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 2], ["factor_id", 22]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 2], ["factor_id", 23]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 2], ["factor_id", 24]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/dealings/2
+Completed 302 Found in 38ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 16:40:34 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (33.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (5.4ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (6.2ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.8ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (88.2ms)
+  Rendered dealings/show.html.erb within layouts/application (94.7ms)
+Completed 200 OK in 148ms (Views: 142.9ms | ActiveRecord: 2.8ms)
+
+
+Started PATCH "/answers/19" for ::1 at 2016-10-21 16:40:44 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TvrM48NbfAYctTUSTkLLmMUQ0Hf+KpXF457nt3RoMGDEdsWIkGy2K3z39GW1oNoZ5VgIPbhJKK/Ge4rp/vbTUw==", "answer"=>{"title"=>"", "content"=>"abc4567", "question_id"=>"20", "dealing_id"=>""}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Dealing with 'id'=):
+  
+app/controllers/answers_controller.rb:72:in `set_dealing'
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.6ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (110.1ms)
+Started GET "/dealings/2" for ::1 at 2016-10-21 16:43:07 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.1ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (11.2ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.4ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.3ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.8ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.8ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (51.0ms)
+  Rendered dealings/show.html.erb within layouts/application (55.4ms)
+Completed 200 OK in 99ms (Views: 94.7ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/answers/19" for ::1 at 2016-10-21 16:43:11 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I3FK6WvKiiwHEaC3R3jshLN7rE++W5DiXc0B9Q/DUlWp/UOCOP1AAWdTYcC8mv0FkzN0Bfg4LYh4KGyrhV2xZg==", "answer"=>{"title"=>"", "content"=>"abc1343", "question_id"=>"20", "dealing_id"=>""}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Dealing with 'id'=):
+  
+app/controllers/answers_controller.rb:72:in `set_dealing'
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.7ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.0ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (95.9ms)
+Started PATCH "/answers/19" for ::1 at 2016-10-21 16:44:33 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I3FK6WvKiiwHEaC3R3jshLN7rE++W5DiXc0B9Q/DUlWp/UOCOP1AAWdTYcC8mv0FkzN0Bfg4LYh4KGyrhV2xZg==", "answer"=>{"title"=>"", "content"=>"abc1343", "question_id"=>"20", "dealing_id"=>""}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.3ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Dealing with 'id'=):
+  
+app/controllers/answers_controller.rb:72:in `set_dealing'
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.1ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.5ms)
+Started PATCH "/answers/19" for ::1 at 2016-10-21 16:44:38 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I3FK6WvKiiwHEaC3R3jshLN7rE++W5DiXc0B9Q/DUlWp/UOCOP1AAWdTYcC8mv0FkzN0Bfg4LYh4KGyrhV2xZg==", "answer"=>{"title"=>"", "content"=>"abc13434", "question_id"=>"20", "dealing_id"=>""}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Dealing with 'id'=):
+  
+app/controllers/answers_controller.rb:72:in `set_dealing'
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.7ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (96.7ms)
+Started PUT "/__web_console/repl_sessions/782e72a947ce203507d7b99ce237090c" for ::1 at 2016-10-21 16:44:49 -0700
+Started GET "/dealings/2" for ::1 at 2016-10-21 16:46:53 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.6ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (15.7ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.8ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (5.7ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.8ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.6ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (52.9ms)
+  Rendered dealings/show.html.erb within layouts/application (56.6ms)
+Completed 200 OK in 92ms (Views: 86.8ms | ActiveRecord: 2.7ms)
+
+
+Started PATCH "/answers/19" for ::1 at 2016-10-21 16:46:58 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D4tJFQLV/yvwefeWOA2xF47xJGifPmju8C4m36Kdqb+FB0B+UeI1BpA7NuHD76CWrrn8Itld1YTVy0uBKANKjA==", "answer"=>{"title"=>"", "content"=>"abc356", "question_id"=>"20", "dealing_id"=>""}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Dealing with 'id'=):
+  
+app/controllers/answers_controller.rb:72:in `set_dealing'
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.3ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.5ms)
+Started GET "/dealings/2" for ::1 at 2016-10-21 16:49:28 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.1ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (18.5ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.9ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.2ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.8ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.3ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.4ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (58.1ms)
+  Rendered dealings/show.html.erb within layouts/application (62.0ms)
+Completed 200 OK in 103ms (Views: 98.7ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/answers/19" for ::1 at 2016-10-21 16:49:32 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ojkxeFLlV8xrWvsfuB0u9bN2ItDa6AYJws+KMywmoMkotTgTAdKd4QsYOmhD/z90kz76mpyLu2PnKudtprhD+g==", "answer"=>{"title"=>"", "content"=>"abc1234", "question_id"=>"20", "dealing_id"=>"2"}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Dealing with 'id'=):
+  
+app/controllers/answers_controller.rb:72:in `set_dealing'
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.8ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (93.7ms)
+Started PATCH "/answers/19" for ::1 at 2016-10-21 16:50:17 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ojkxeFLlV8xrWvsfuB0u9bN2ItDa6AYJws+KMywmoMkotTgTAdKd4QsYOmhD/z90kz76mpyLu2PnKudtprhD+g==", "answer"=>{"title"=>"", "content"=>"abc123434", "question_id"=>"20", "dealing_id"=>"2"}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: dealing_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/dealings/2
+Completed 302 Found in 39ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 16:50:17 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (8.8ms)
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.6ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.2ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.5ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.4ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (46.4ms)
+  Rendered dealings/show.html.erb within layouts/application (68.2ms)
+Completed 200 OK in 112ms (Views: 106.5ms | ActiveRecord: 2.6ms)
+
+
+Started PATCH "/answers/19" for ::1 at 2016-10-21 16:50:23 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pgcm/TGI3VnSEZYp1loFj9GFPnzpPBGz6pShiIsejI+0iy+WYr8XdLJTV14tuBQO8c3mNq9frNnPcczWAYBvvA==", "answer"=>{"title"=>"", "content"=>"abc345", "question_id"=>"20", "dealing_id"=>"2"}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: dealing_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/dealings/2
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 16:50:23 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.1ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (8.0ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.8ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.6ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (45.2ms)
+  Rendered dealings/show.html.erb within layouts/application (50.2ms)
+Completed 200 OK in 102ms (Views: 97.4ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/answers/19" for ::1 at 2016-10-21 17:04:48 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wD4i1l5emh0WbqPF5z37HZG8MHxrVt3QgwtAciB+D09Ksiu9DWlQMHYsYrIc3+qcsfToNi01YLqm7i0squDsfA==", "answer"=>{"title"=>"", "content"=>"abc1234", "question_id"=>"20", "dealing_id"=>"2"}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: dealing_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/dealings/2
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 17:04:48 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (12.4ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.6ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (5.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.9ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.6ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.5ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (50.8ms)
+  Rendered dealings/show.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 98ms (Views: 94.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 17:04:51 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (8.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.4ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.0ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.4ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.3ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.6ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (45.6ms)
+  Rendered dealings/show.html.erb within layouts/application (50.8ms)
+Completed 200 OK in 88ms (Views: 84.4ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/answers/19" for ::1 at 2016-10-21 17:05:06 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jlPjltT71bt14qEx3Og8AsbFmDf/y3ApHE6RgTONWmYE3+r9h8wflhWgYEYnCi2D5o1AfbmozUM5q/zfuRO5VQ==", "answer"=>{"title"=>"", "content"=>"abc3435", "question_id"=>"20", "dealing_id"=>"2"}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.3ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: dealing_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/dealings/2
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 17:05:06 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.4ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (19.5ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (6.0ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.6ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.8ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.9ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (65.1ms)
+  Rendered dealings/show.html.erb within layouts/application (69.4ms)
+Completed 200 OK in 108ms (Views: 102.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 17:06:00 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.4ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (7.6ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.4ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.1ms)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.4ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.1ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (43.6ms)
+  Rendered dealings/show.html.erb within layouts/application (48.7ms)
+Completed 200 OK in 88ms (Views: 82.9ms | ActiveRecord: 2.8ms)
+
+
+Started PATCH "/answers/19" for ::1 at 2016-10-21 17:06:05 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zs5SbyI/biqCjCVAPmmsdYqQYMKhURMkNEYpC1JrLTnsQlsEcQikB+LO5DfFi730qti4iOcyrk4Ro0RV2PXOCg==", "answer"=>{"title"=>"", "content"=>"abc12345", "question_id"=>"20", "dealing_id"=>"2"}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: dealing_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/dealings/2
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 17:06:05 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.3ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (8.8ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.2ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.2ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.4ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.8ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (49.4ms)
+  Rendered dealings/show.html.erb within layouts/application (53.9ms)
+Completed 200 OK in 102ms (Views: 96.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 17:06:40 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.4ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (8.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.2ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.2ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.1ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.3ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (42.6ms)
+  Rendered dealings/show.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 84ms (Views: 78.9ms | ActiveRecord: 2.7ms)
+
+
+Started PATCH "/answers/19" for ::1 at 2016-10-21 17:06:44 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vQUU6sTsmMq3wEd3DilEVcjAwq41tb30vXjYQzueWuY3iR2Bl9tS59eChgD1y1XU6Iga5HPWAJ6YnbUdsQC51Q==", "answer"=>{"title"=>"", "content"=>"abc1235", "question_id"=>"20", "dealing_id"=>"2"}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: dealing_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/dealings/2
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 17:06:44 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (9.0ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.4ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.9ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.0ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.1ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.0ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (47.2ms)
+  Rendered dealings/show.html.erb within layouts/application (51.7ms)
+Completed 200 OK in 108ms (Views: 103.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 17:06:45 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.1ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (7.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.2ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.5ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.4ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.0ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.0ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (42.5ms)
+  Rendered dealings/show.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 97ms (Views: 92.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 17:06:49 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (7.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.3ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.0ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (5.3ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.6ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.4ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (46.5ms)
+  Rendered dealings/show.html.erb within layouts/application (51.4ms)
+Completed 200 OK in 92ms (Views: 87.7ms | ActiveRecord: 2.4ms)
+
+
+Started PATCH "/answers/19" for ::1 at 2016-10-21 17:07:00 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3RLgDJGhyPacPSJ0UP62AVkRD4yo2OaP1jOivHXbORRXnulnwpYC2/x/4wOrHKeAeVnXxu67W+Xz1s/i/0XaJw==", "answer"=>{"title"=>"", "content"=>"abc12345", "question_id"=>"20", "dealing_id"=>"2"}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: dealing_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/dealings/2
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 17:07:00 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.4ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (10.9ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.6ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.5ms)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.4ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.3ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (47.0ms)
+  Rendered dealings/show.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 93ms (Views: 87.7ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/answers" for ::1 at 2016-10-21 17:08:35 -0700
+Processing by AnswersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cXAUtxA4ru/dSqICDqOXmYPl5IciEGahCykojpIEKeb7/B3cQw9kwr0IY3X1QYYYo608zWRz28suzEXQGJrK1Q==", "answer"=>{"title"=>"", "content"=>"abc34433", "question_id"=>"23", "dealing_id"=>"2"}, "commit"=>"Create Answer"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: dealing_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/dealings/2
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/dealings/2" for ::1 at 2016-10-21 17:08:35 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.3ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 2]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (8.0ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.3ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.0ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.4ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (41.0ms)
+  Rendered dealings/show.html.erb within layouts/application (47.4ms)
+Completed 200 OK in 86ms (Views: 82.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-10-26 09:40:55 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DealingsController#index as HTML
+  Rendering dealings/index.html.erb within layouts/application
+  [1m[36mDealing Load (0.4ms)[0m  [1m[34mSELECT "dealings".* FROM "dealings"[0m
+  Rendered dealings/index.html.erb within layouts/application (22.4ms)
+Started GET "/" for ::1 at 2016-10-26 09:40:55 -0700
+Processing by DealingsController#index as HTML
+  Rendering dealings/index.html.erb within layouts/application
+  [1m[36mDealing Load (0.7ms)[0m  [1m[34mSELECT "dealings".* FROM "dealings"[0m
+  Rendered dealings/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 628ms (Views: 597.1ms | ActiveRecord: 0.9ms)
+
+
+Completed 200 OK in 254ms (Views: 249.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/dealings/new" for ::1 at 2016-10-26 09:41:00 -0700
+Processing by DealingsController#new as HTML
+  Rendering dealings/new.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (31.0ms)
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dealings/new.html.erb within layouts/application (64.1ms)
+Completed 200 OK in 110ms (Views: 104.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/dealings" for ::1 at 2016-10-26 09:41:02 -0700
+Processing by DealingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3n5+lIogd7YwXyBdjpke0q4E+FuVLb324Zie/bzAMgMxQF41//qBNkgGae06uT3oIcMPaDKBn9HfQF9Ns8ZLpA==", "dealing"=>{"due_date(1i)"=>"2016", "due_date(2i)"=>"10", "due_date(3i)"=>"26"}, "commit"=>"Create Dealing"}
+  [1m[36mFactor Load (1.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "dealings" ("due_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["due_date", Wed, 26 Oct 2016], ["created_at", 2016-10-26 16:41:02 UTC], ["updated_at", 2016-10-26 16:41:02 UTC]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 3], ["factor_id", 19]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 3], ["factor_id", 20]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 3], ["factor_id", 21]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 3], ["factor_id", 22]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 3], ["factor_id", 23]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 3], ["factor_id", 24]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/dealings/3
+Completed 302 Found in 45ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/dealings/3" for ::1 at 2016-10-26 09:41:02 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDealing Load (0.5ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 3]]
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (1.0ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (45.3ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.5ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.2ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.8ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.4ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (98.0ms)
+  Rendered dealings/show.html.erb within layouts/application (118.8ms)
+Completed 200 OK in 198ms (Views: 182.5ms | ActiveRecord: 5.2ms)
+
+
+Started PATCH "/answers/19" for ::1 at 2016-10-26 09:41:35 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GnjyptE8/d5+2H8n9TAeMF2WiymL0PPxRo/x53Laz3SHGR+dHHttcpk7k94BKQMpNishHvwWorY6OJvq6eYJGw==", "answer"=>{"title"=>"", "content"=>"abc1", "question_id"=>"20", "dealing_id"=>"3"}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: dealing_id
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/dealings/3
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/dealings/3" for ::1 at 2016-10-26 09:41:35 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDealing Load (0.3ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 3]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (11.2ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.8ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.4ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.8ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (5.1ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (52.7ms)
+  Rendered dealings/show.html.erb within layouts/application (59.9ms)
+Completed 200 OK in 117ms (Views: 112.9ms | ActiveRecord: 2.1ms)
+
+
+Started PATCH "/answers/19" for ::1 at 2016-10-26 09:42:53 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RueVE0lLYV2RF7+lecOMf5pmzOQiQlkFVgwdXukrWDHbhngohAzx8Xb0U1yN2pFm8dtm01WECEIqu3dTcheeXg==", "answer"=>{"title"=>"", "content"=>"abc1", "question_id"=>"20", "dealing_id"=>"3"}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: dealing_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/dealings/3
+Completed 302 Found in 38ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/dealings/3" for ::1 at 2016-10-26 09:42:53 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 3]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (8.5ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.3ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.2ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.9ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.5ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.4ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (46.3ms)
+  Rendered dealings/show.html.erb within layouts/application (65.4ms)
+Completed 200 OK in 109ms (Views: 105.0ms | ActiveRecord: 2.1ms)
+
+
+Started PATCH "/answers/19" for ::1 at 2016-10-26 09:43:39 -0700
+Processing by AnswersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QR3GlaAHAaPPuUm83ZkFyGAxpRBlueyMJdFRE7F7vJHcfCuubUCRDyhapUUpgBjRC4wPJxJ/vctZZjseKkd6/g==", "answer"=>{"title"=>"", "content"=>"1abc", "question_id"=>"20", "dealing_id"=>"3"}, "commit"=>"Update Answer", "id"=>"19"}
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "answers" SET "content" = ?, "dealing_id" = ?, "updated_at" = ? WHERE "answers"."id" = ?[0m  [["content", "1abc"], ["dealing_id", 3], ["updated_at", 2016-10-26 16:43:39 UTC], ["id", 19]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/dealings/3
+Completed 302 Found in 49ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/dealings/3" for ::1 at 2016-10-26 09:43:39 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 3]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (10.6ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (5.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (5.6ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.2ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (54.2ms)
+  Rendered dealings/show.html.erb within layouts/application (88.0ms)
+Completed 200 OK in 131ms (Views: 125.3ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/answers" for ::1 at 2016-10-26 09:44:05 -0700
+Processing by AnswersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rqJJtnKwulrJ1zpIxBNApDXbOh4NQYp1cfQmeDYbWvIzw6SNv/cq9i401rEwCl29XmaQKXqH2zINQ0x1rSecnQ==", "answer"=>{"title"=>"", "content"=>"character is 123", "question_id"=>"22", "dealing_id"=>"3"}, "commit"=>"Create Answer"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("title", "content", "question_id", "created_at", "updated_at", "dealing_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["content", "character is 123"], ["question_id", 22], ["created_at", 2016-10-26 16:44:05 UTC], ["updated_at", 2016-10-26 16:44:05 UTC], ["dealing_id", 3]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/dealings/3
+Completed 302 Found in 11ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/dealings/3" for ::1 at 2016-10-26 09:44:05 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDealing Load (0.3ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 3]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (9.6ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (2.9ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.6ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.2ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.8ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (46.5ms)
+  Rendered dealings/show.html.erb within layouts/application (51.4ms)
+Completed 200 OK in 94ms (Views: 88.1ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddStatusToDealings (20161026170206)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "dealings" ADD "status" varchar[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161026170206"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_answers_on_dealing_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_answers_on_dealing_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_answers_on_question_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_dealings_factors_on_factor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_dealings_factors_on_factor_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_dealings_factors_on_dealing_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_dealings_factors_on_dealing_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_profiles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_profiles_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questions_on_answer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questions_on_answer_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questions_on_factor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questions_on_factor_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_settings_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_settings_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_works_on_dealing_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_works_on_dealing_id' AND type='index'
+[0m
+Started GET "/dealings/3/edit" for ::1 at 2016-10-26 10:02:33 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (4.6ms)
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 3]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (22.1ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (5.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.3ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.3ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (71.8ms)
+  Rendered dealings/edit.html.erb within layouts/application (99.0ms)
+Completed 200 OK in 167ms (Views: 147.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/dealings/" for ::1 at 2016-10-26 10:04:42 -0700
+Processing by DealingsController#index as HTML
+  Rendering dealings/index.html.erb within layouts/application
+  [1m[36mDealing Load (0.6ms)[0m  [1m[34mSELECT "dealings".* FROM "dealings"[0m
+  Rendered dealings/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 108ms (Views: 96.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/dealings/new" for ::1 at 2016-10-26 10:04:44 -0700
+Processing by DealingsController#new as HTML
+  Rendering dealings/new.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (4.2ms)
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered dealings/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 70ms (Views: 64.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/dealings" for ::1 at 2016-10-26 10:04:46 -0700
+Processing by DealingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JeKbFEWnZCFyEDEvUbHa5a9+lmrWKeqz33WQm/FUI6XK3Lu1MH2SoQpJeJ/lkfnfILlhWXGFyJThrVEr/lJaAg==", "dealing"=>{"due_date(1i)"=>"2016", "due_date(2i)"=>"10", "due_date(3i)"=>"26"}, "commit"=>"Create Dealing"}
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dealings" ("due_date", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["due_date", Wed, 26 Oct 2016], ["created_at", 2016-10-26 17:04:46 UTC], ["updated_at", 2016-10-26 17:04:46 UTC]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 4], ["factor_id", 19]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 4], ["factor_id", 20]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 4], ["factor_id", 21]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 4], ["factor_id", 22]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 4], ["factor_id", 23]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "dealings_factors" ("dealing_id", "factor_id") VALUES (?, ?)[0m  [["dealing_id", 4], ["factor_id", 24]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/dealings/4/edit
+Completed 302 Found in 33ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/dealings/4/edit" for ::1 at 2016-10-26 10:04:46 -0700
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDealing Load (0.3ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  Rendered dealings/_form.html.erb (3.9ms)
+  [1m[36mFactor Load (0.3ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 4]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (23.6ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.4ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.6ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.9ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.8ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.6ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (74.7ms)
+  Rendered dealings/edit.html.erb within layouts/application (86.5ms)
+Completed 200 OK in 131ms (Views: 122.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/dealings/4/edit" for ::1 at 2016-10-26 10:30:20 -0700
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDealing Load (0.5ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 4]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (21.3ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.9ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (6.0ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (6.0ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (6.0ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (51.3ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (122.9ms)
+  Rendered dealings/_form.html.erb (1.7ms)
+  Rendered dealings/edit.html.erb within layouts/application (142.4ms)
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 2.6ms)
+
+
+  
+SyntaxError (/Users/paul/src/fairdeal/app/views/dealings/_form.html.erb:20: syntax error, unexpected ..., expecting ']'
+...ress', 1], ['Complete', 2], ...], 1) );@output_buffer.safe_a...
+...                               ^):
+  
+app/views/dealings/_form.html.erb:20: syntax error, unexpected ..., expecting ']'
+app/views/dealings/edit.html.erb:5:in `_app_views_dealings_edit_html_erb___4499945609463895280_70258151548540'
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.0ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (113.6ms)
+Started GET "/dealings/4/edit" for ::1 at 2016-10-26 10:30:31 -0700
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  [1m[36mFactor Load (0.2ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 4]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (10.5ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.0ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (5.6ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (5.9ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (5.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.7ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (57.4ms)
+  Rendered dealings/_form.html.erb (1.7ms)
+  Rendered dealings/edit.html.erb within layouts/application (68.1ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 2.0ms)
+
+
+  
+SyntaxError (/Users/paul/src/fairdeal/app/views/dealings/_form.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/paul/src/fairdeal/app/views/dealings/_form.html.erb:28: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/paul/src/fairdeal/app/views/dealings/_form.html.erb:30: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/dealings/_form.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+app/views/dealings/_form.html.erb:28: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/dealings/_form.html.erb:30: syntax error, unexpected keyword_end, expecting ')'
+app/views/dealings/edit.html.erb:5:in `_app_views_dealings_edit_html_erb___4499945609463895280_70258129375020'
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.7ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/paul/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (95.8ms)
+Started GET "/dealings/4/edit" for ::1 at 2016-10-26 10:30:55 -0700
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  [1m[36mFactor Load (0.1ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 4]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (7.9ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.7ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.3ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.0ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.8ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.9ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (49.1ms)
+  Rendered dealings/_form.html.erb (7.6ms)
+  Rendered dealings/edit.html.erb within layouts/application (62.8ms)
+Completed 200 OK in 114ms (Views: 109.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/dealings/4/edit" for ::1 at 2016-10-26 10:31:13 -0700
+Processing by DealingsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering dealings/edit.html.erb within layouts/application
+  [1m[36mFactor Load (0.1ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 4]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (7.1ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (2.8ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.5ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.0ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.2ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.1ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (40.3ms)
+  Rendered dealings/_form.html.erb (4.3ms)
+  Rendered dealings/edit.html.erb within layouts/application (49.9ms)
+Completed 200 OK in 86ms (Views: 81.7ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/dealings/4" for ::1 at 2016-10-26 10:41:33 -0700
+Processing by DealingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m5NBP2WzZ7fMFYFdxBP56SkTCk5yeZjeSQZKM2WoKDUG8qwEqPT3Gyv2baQwCuTwQq6geQW/yZk1sSA+/pTuWg==", "dealing"=>{"due_date(1i)"=>"2016", "due_date(2i)"=>"10", "due_date(3i)"=>"26", "status"=>"2"}, "commit"=>"Update Dealing", "id"=>"4"}
+  [1m[36mDealing Load (0.2ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Unpermitted parameter: status
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/dealings/4
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/dealings/4" for ::1 at 2016-10-26 10:41:33 -0700
+Processing by DealingsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDealing Load (0.1ms)[0m  [1m[34mSELECT  "dealings".* FROM "dealings" WHERE "dealings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering dealings/show.html.erb within layouts/application
+  [1m[36mFactor Load (0.1ms)[0m  [1m[34mSELECT "factors".* FROM "factors" INNER JOIN "dealings_factors" ON "factors"."id" = "dealings_factors"."factor_id" WHERE "dealings_factors"."dealing_id" = ?[0m  [["dealing_id", 4]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 19]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 20], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 21], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [2 times] (10.9ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 20]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 22], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (3.9ms)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 21]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 23], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.8ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 22]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 24], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (5.9ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 23]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 25], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (16.0ms)
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."factor_id" = ?[0m  [["factor_id", 24]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."question_id" = ? LIMIT ?[0m  [["question_id", 26], ["LIMIT", 1]]
+  Rendered collection of questions/_question.html.erb [1 times] (4.2ms)
+  Rendered collection of factors/_factor.html.erb [6 times] (68.1ms)
+  Rendered dealings/show.html.erb within layouts/application (74.1ms)
+Completed 200 OK in 142ms (Views: 136.8ms | ActiveRecord: 1.9ms)
+
+

@@ -3,5 +3,7 @@
   <%= @dealing.due_date %>
 </p>
 
+<%= render @dealing.factors %>
+
 <%= link_to 'Edit', edit_dealing_path(@dealing) %> |
 <%= link_to 'Back', dealings_path %>

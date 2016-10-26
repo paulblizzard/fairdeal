@@ -16,9 +16,6 @@ class DealingsController < ApplicationController
   def new
     @dealing = Dealing.new
 
-    Factor.all.each do |f| 
-      @dealing.factors << f
-    end
   end
 
   # GET /dealings/1/edit
@@ -30,9 +27,13 @@ class DealingsController < ApplicationController
   def create
     @dealing = Dealing.new(dealing_params)
 
+    Factor.all.each do |f| 
+      @dealing.factors << f
+    end
+
     respond_to do |format|
       if @dealing.save
-        format.html { redirect_to @dealing, notice: 'Dealing was successfully created.' }
+        format.html { redirect_to edit_dealing_path(@dealing), notice: 'Dealing was successfully created.' }
         format.json { render :show, status: :created, location: @dealing }
       else
         format.html { render :new }

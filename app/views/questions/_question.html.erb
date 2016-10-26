@@ -42,7 +42,7 @@
 
 	  <div class="field">
 	    <%= f.label :content %>
-	    <%= f.text_area :content, placeholder: answer.content %>
+	    <%= f.text_area :content %>
 	  </div>
 
 	  <div class="field">
@@ -50,8 +50,7 @@
 	  </div>
 
 	  <div class="field">
-	  	<%= f.label :dealing_id %>
-	    <%= f.text_field :dealing_id, placeholder: @dealing %>
+	    <%= f.hidden_field :dealing_id, value: @dealing.id %>
 	  </div>
 
 	  <div class="actions">

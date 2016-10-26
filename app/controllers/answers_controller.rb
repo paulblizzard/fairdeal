@@ -69,11 +69,11 @@ class AnswersController < ApplicationController
     end
 
     def set_dealing
-      @dealing = Dealing.find(params[:dealing_id])
+      @dealing = Dealing.find(params[:answer][:dealing_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def answer_params
-      params.require(:answer).permit(:title, :content, :question_id)
+      params.require(:answer).permit(:title, :content, :question_id, :dealing_id)
     end
 end

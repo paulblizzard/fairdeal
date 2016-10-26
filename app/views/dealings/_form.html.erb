@@ -16,6 +16,11 @@
     <%= f.date_select :due_date %>
   </div>
 
+  <div class="field">
+      <%= f.label :status %>
+      <%= f.select(:status, options_for_select([['In Progress', 1], ['Complete', 2]], 1))%>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
