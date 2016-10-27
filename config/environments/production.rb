@@ -85,4 +85,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.predictionio.threads = ENV['PIO_THREADS']
+  config.predictionio.server_url = ENV['PIO_EVENT_SERVER_URL']
+  config.predictionio.access_key = ENV['PIO_ACCESS_KEY']
 end

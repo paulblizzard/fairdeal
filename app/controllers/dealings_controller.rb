@@ -27,15 +27,22 @@ class DealingsController < ApplicationController
   def create
     @dealing = Dealing.new(dealing_params)
 
+    #add all factors
     Factor.all.each do |f| 
       @dealing.factors << f
     end
 
+    #set status and category
+    @dealing.status = "In Progress"
+    @dealing.category = "Unknown"
+
     respond_to do |format|
       if @dealing.save
+        logger.info "Dealing was successfully created."
         format.html { redirect_to edit_dealing_path(@dealing), notice: 'Dealing was successfully created.' }
         format.json { render :show, status: :created, location: @dealing }
       else
+        logger.error "Error: Dealing creation failed #{@dealing.errors}."
         format.html { render :new }
         format.json { render json: @dealing.errors, status: :unprocessable_entity }
       end
@@ -47,9 +54,25 @@ class DealingsController < ApplicationController
   def update
     respond_to do |format|
       if @dealing.update(dealing_params)
+        logger.info "Dealing was successfully updated."
+
+        # send request to predictionio server if a user marks a dealing as complete
+        if @dealing.status.include? "Complete" && @dealing.status_changed?
+          logger.info "User changed status to Complete, sending query to predictionio."
+
+        end
+
+        # send training data to predictionio server if an admin changes the category
+        if @dealing.category_changed?
+          logger.info "Change in category detected, sending event to predictionio server."
+
+        end
+
+        logger.info "Dealing was successfully updated."
         format.html { redirect_to @dealing, notice: 'Dealing was successfully updated.' }
         format.json { render :show, status: :ok, location: @dealing }
       else
+        logger.error "Error: Dealing update failed #{@dealing.errors}."
         format.html { render :edit }
         format.json { render json: @dealing.errors, status: :unprocessable_entity }
       end

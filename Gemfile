@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Use devise for authentication
 gem 'devise'
 
+#use predictionio gem to connect to predict.io backend
+gem 'predictionio'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

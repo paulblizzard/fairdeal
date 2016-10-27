@@ -29,9 +29,11 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
+        logger.info "Question was successfully created."
         format.html { redirect_to @factor, notice: 'Question was successfully created.' }
         format.json { render :show, status: :created, location: @question }
       else
+        logger.error "Error: Question creation failed. #{@question.errors}"
         format.html { render :new }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
@@ -43,9 +45,11 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
+        logger.info "Question was successfully updated."
         format.html { redirect_to @factor, notice: 'Question was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
+        logger.error "Error: Question update failed. #{@question.errors}"
         format.html { render :edit }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
