@@ -27,11 +27,22 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
 
+    logger.info "Querying the PredictionIO server at "+ENV["PIO_#{@answer.question.question_type}_ENGINE"]
+
+    engine_client = PredictionIO::EngineClient.new(ENV["PIO_#{@answer.question.question_type}_ENGINE"])
+    response = JSON.parse engine_client.send_query(text: @answer.content).to_json
+    
+    @answer.confidence = response["confidence"]
+    @answer.category = response["category"]
+
+    logger.info "Response from PredictionIO server -> category:"+@answer.category+", confidence:"+@answer.confidence.to_s
+
     respond_to do |format|
       if @answer.save
         logger.info "Answer was successfully created."
         format.html { redirect_to @dealing, notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
+
       else
         logger.error "Error: Answer creation failed #{@answer.errors}."
         format.html { redirect_to @dealing }
@@ -43,9 +54,21 @@ class AnswersController < ApplicationController
   # PATCH/PUT /answers/1
   # PATCH/PUT /answers/1.json
   def update
+
+    logger.info "Querying the PredictionIO server at "+ENV["PIO_#{@answer.question.question_type}_ENGINE"]
+
+    engine_client = PredictionIO::EngineClient.new(ENV["PIO_#{@answer.question.question_type}_ENGINE"])
+    response = JSON.parse engine_client.send_query(text: @answer.content).to_json
+    
+    @answer.confidence = response["confidence"]
+    @answer.category = response["category"]
+
+    logger.info "Response from PredictionIO server -> category:"+@answer.category+", confidence:"+@answer.confidence.to_s
+
     respond_to do |format|
       if @answer.update(answer_params)
         logger.info "Answer was successfully updated."
+
         format.html { redirect_to @dealing, notice: 'Answer was successfully updated.' }
         format.json { render :show, status: :ok, location: @answer }
       else

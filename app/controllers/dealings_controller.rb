@@ -57,14 +57,30 @@ class DealingsController < ApplicationController
         logger.info "Dealing was successfully updated."
 
         # send request to predictionio server if a user marks a dealing as complete
-        if @dealing.status.include? "Complete" && @dealing.status_changed?
+        if @dealing.status.includes? "Complete" && @dealing.status_changed?
           logger.info "User changed status to Complete, sending query to predictionio."
+
+
 
         end
 
         # send training data to predictionio server if an admin changes the category
         if @dealing.category_changed?
           logger.info "Change in category detected, sending event to predictionio server."
+
+          # foreach factor
+            # foreach question
+              #send the answer event for training
+          event_client = PredictionIO::EventClient.new(ENV['PIO_1_KEY'], ENV['PIO_EVENT_SERVER_URL'], Integer(ENV['PIO_THREADS']))
+
+          #event_client.create_event('answer', 'content', @,
+          #                'eventTime' => Time.now.to_formatted_s(:iso8601),
+          #                'properties' => { 'prop1' => 1,
+          #                                  'prop2' => 'value2',
+          #                                  'prop3' => [1, 2, 3],
+          #                                  'prop4' => true,
+          #                                  'prop5' => %w(a b c),
+          #                                  'prop6' => 4.56 })
 
         end
 
