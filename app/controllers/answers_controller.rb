@@ -34,6 +34,7 @@ class AnswersController < ApplicationController
     
     @answer.confidence = response["confidence"]
     @answer.category = response["category"]
+    @answer.category_decided_by = "PREDICTIONIO"
 
     logger.info "Response from PredictionIO server -> category:"+@answer.category+", confidence:"+@answer.confidence.to_s
 
@@ -49,22 +50,47 @@ class AnswersController < ApplicationController
         format.json { render json: @answer.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # PATCH/PUT /answers/1
   # PATCH/PUT /answers/1.json
   def update
 
-    logger.info "Querying the PredictionIO server at "+ENV["PIO_#{@answer.question.question_type}_ENGINE"]
+    #did the user change the category of answer?
+    logger.info "@answer.category is "+@answer.category+", and params[:answer][:category] is "+params[:answer][:category]
 
-    engine_client = PredictionIO::EngineClient.new(ENV["PIO_#{@answer.question.question_type}_ENGINE"])
-    response = JSON.parse engine_client.send_query(text: @answer.content).to_json
-    
-    @answer.confidence = response["confidence"]
-    @answer.category = response["category"]
+    if @answer.category != params[:answer][:category]
 
-    logger.info "Response from PredictionIO server -> category:"+@answer.category+", confidence:"+@answer.confidence.to_s
+      logger.info "Training the PredictionIO server at "+ENV["PIO_EVENT_SERVER_URL"]
 
+      @answer.category = params[:answer][:category]
+      @answer.category_decided_by = "HUMAN"
+
+      event_client = PredictionIO::EventClient.new(ENV["PIO_#{@answer.question.question_type}_KEY"], ENV["PIO_EVENT_SERVER_URL"], Integer(ENV["PIO_THREADS"]))
+      response = event_client.create_event(
+        "answer",
+        "content",
+        @answer.id,
+        { "properties" => {"text" => @answer.content, "label" => @answer.category}})
+
+      logger.info "Response from PredictionIO server -> code:"+response.code+", json:"+response.to_json
+
+    #if not, then query predictionio
+    else
+      logger.info "Querying the PredictionIO server at "+ENV["PIO_#{@answer.question.question_type}_ENGINE"]
+
+      engine_client = PredictionIO::EngineClient.new(ENV["PIO_#{@answer.question.question_type}_ENGINE"])
+      response = JSON.parse engine_client.send_query(text: @answer.content).to_json
+      
+      @answer.confidence = response["confidence"]
+      @answer.category = response["category"]
+      @answer.category_decided_by = "PREDICTIONIO"
+
+      logger.info "Response from PredictionIO server -> category:"+@answer.category+", confidence:"+@answer.confidence.to_s
+    end
+
+    #update the answer
     respond_to do |format|
       if @answer.update(answer_params)
         logger.info "Answer was successfully updated."
@@ -101,6 +127,6 @@ class AnswersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def answer_params
-      params.require(:answer).permit(:title, :content, :question_id, :dealing_id)
+      params.require(:answer).permit(:title, :content, :question_id, :dealing_id, :category)
     end
 end

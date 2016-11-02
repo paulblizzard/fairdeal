@@ -10,7 +10,7 @@
 		<%= content_tag :span, "Answer:", class: "answer-title" %>
 	</div>
 	<%= if question.answer.present?
-			simple_format question.answer.content 
+			simple_format question.answer.content+"\n\nCategory: " +question.answer.category+"\nConfidence:" +question.answer.confidence.to_s
 		else
 		 	simple_format "No answer given." 
 		end %>	 
@@ -43,6 +43,11 @@
 	  <div class="field">
 	    <%= f.label :content %>
 	    <%= f.text_area :content %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.label :category %>
+	    <%= f.select(:category, options_for_select([['Fair', 'fair'], ['Unfair', 'unfair']], answer.category))%>
 	  </div>
 
 	  <div class="field">
