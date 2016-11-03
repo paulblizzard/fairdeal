@@ -9,12 +9,12 @@
 Factor.destroy_all
 
 Factor.create! [
-	{ title: "Factor 1", content: "Purpose of the dealing."},
-	{ title: "Factor 2", content: "Character of the dealing."},
-	{ title: "Factor 3", content: "Amount of the dealing."},
-	{ title: "Factor 4", content: "Alternatives to the dealing."},
-	{ title: "Factor 5", content: "Nature of the work."},
-	{ title: "Factor 6", content: "Effect of the dealing on the work."}
+      { title: "Factor 1", content: "Purpose of the dealing.", factor_type: "FACTOR1"},
+      { title: "Factor 2", content: "Character of the dealing.", factor_type: "FACTOR2"},
+      { title: "Factor 3", content: "Amount of the dealing.", factor_type: "FACTOR3"},
+      { title: "Factor 4", content: "Alternatives to the dealing.", factor_type: "FACTOR4"},
+      { title: "Factor 5", content: "Nature of the work.", factor_type: "FACTOR5"},
+      { title: "Factor 6", content: "Effect of the dealing on the work.", factor_type: "FACTOR6"}
 ]
 
 Question.destroy_all

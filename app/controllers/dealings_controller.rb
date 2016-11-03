@@ -15,7 +15,6 @@ class DealingsController < ApplicationController
   # GET /dealings/new
   def new
     @dealing = Dealing.new
-
   end
 
   # GET /dealings/1/edit
@@ -27,11 +26,6 @@ class DealingsController < ApplicationController
   def create
     @dealing = Dealing.new(dealing_params)
 
-    #add all factors
-    Factor.all.each do |f| 
-      @dealing.factors << f
-    end
-
     #set status and category
     @dealing.status = "In Progress"
     @dealing.category = "Unknown"
@@ -39,6 +33,15 @@ class DealingsController < ApplicationController
     respond_to do |format|
       if @dealing.save
         logger.info "Dealing was successfully created."
+
+        #this is ugly as hell
+        @dealing.factors.create( title: "Factor 1", content: "Purpose of the dealing.", factor_type: "FACTOR1" ).questions.create( title: "Question 1", content: "What is the purpose of the dealing?", question_type: "QUESTION1" )
+        @dealing.factors.create( title: "Factor 2", content: "Character of the dealing.", factor_type: "FACTOR2" ).questions.create( title: "Question 2", content: "What is the character of the dealing?", question_type: "QUESTION2" )
+        @dealing.factors.create( title: "Factor 3", content: "Amount of the dealing.", factor_type: "FACTOR3" ).questions.create( title: "Question 3", content: "What is the amount of the dealing?", question_type: "QUESTION3" )
+        @dealing.factors.create( title: "Factor 4", content: "Alternatives to the dealing.", factor_type: "FACTOR4" ).questions.create( title: "Question 4", content: "What are the alternatives to the dealing?", question_type: "QUESTION4" )
+        @dealing.factors.create( title: "Factor 5", content: "Nature of the work.", factor_type: "FACTOR5" ).questions.create( title: "Question 5", content: "What is the nature of the work?", question_type: "QUESTION5" )
+        @dealing.factors.create( title: "Factor 6", content: "Effect of the dealing on the work.", factor_type: "FACTOR6" ).questions.create( title: "Question 6", content: "What is the effect of the dealing on the work?", question_type: "QUESTION6" )
+
         format.html { redirect_to edit_dealing_path(@dealing), notice: 'Dealing was successfully created.' }
         format.json { render :show, status: :created, location: @dealing }
       else
@@ -56,33 +59,6 @@ class DealingsController < ApplicationController
       if @dealing.update(dealing_params)
         logger.info "Dealing was successfully updated."
 
-        # send request to predictionio server if a user marks a dealing as complete
-        if @dealing.status.includes? "Complete" && @dealing.status_changed?
-          logger.info "User changed status to Complete, sending query to predictionio."
-
-
-
-        end
-
-        # send training data to predictionio server if an admin changes the category
-        if @dealing.category_changed?
-          logger.info "Change in category detected, sending event to predictionio server."
-
-          # foreach factor
-            # foreach question
-              #send the answer event for training
-          event_client = PredictionIO::EventClient.new(ENV['PIO_1_KEY'], ENV['PIO_EVENT_SERVER_URL'], Integer(ENV['PIO_THREADS']))
-
-          #event_client.create_event('answer', 'content', @,
-          #                'eventTime' => Time.now.to_formatted_s(:iso8601),
-          #                'properties' => { 'prop1' => 1,
-          #                                  'prop2' => 'value2',
-          #                                  'prop3' => [1, 2, 3],
-          #                                  'prop4' => true,
-          #                                  'prop5' => %w(a b c),
-          #                                  'prop6' => 4.56 })
-
-        end
 
         logger.info "Dealing was successfully updated."
         format.html { redirect_to @dealing, notice: 'Dealing was successfully updated.' }

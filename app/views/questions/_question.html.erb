@@ -20,7 +20,8 @@
 	<% 	answer = question.answer
 		
 		if answer.nil?
-			answer = question.build_answer 
+			answer=Answer.new
+			answer.question_id=question.id
 		end %>
 
 	<%= form_for(answer) do |f| %>
@@ -47,7 +48,7 @@
 
 	  <div class="field">
 	    <%= f.label :category %>
-	    <%= f.select(:category, options_for_select([['Fair', 'fair'], ['Unfair', 'unfair']], answer.category))%>
+	    <%= f.select(:category, options_for_select([['Fair', 'fair'], ['Unfair', 'unfair'], ['Unknown','unknown']], answer.category))%>
 	  </div>
 
 	  <div class="field">
