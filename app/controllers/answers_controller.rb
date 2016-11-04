@@ -69,7 +69,7 @@ class AnswersController < ApplicationController
 
       event_client = PredictionIO::EventClient.new(ENV["PIO_#{@answer.question.question_type}_KEY"], ENV["PIO_EVENT_SERVER_URL"], Integer(ENV["PIO_THREADS"]))
       response = event_client.create_event(
-        "answer",
+        "answer"+@answer.question.question_type.split('QUESTION').last,
         "content",
         @answer.id,
         { "properties" => {"text" => @answer.content, "label" => @answer.category}})
