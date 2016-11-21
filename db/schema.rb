@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103192652) do
+ActiveRecord::Schema.define(version: 20161121192224) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "title"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20161103192652) do
     t.integer  "factor_id"
     t.integer  "answer_id"
     t.string   "question_type"
+    t.boolean  "quantitative"
     t.index ["answer_id"], name: "index_questions_on_answer_id"
     t.index ["factor_id"], name: "index_questions_on_factor_id"
   end
