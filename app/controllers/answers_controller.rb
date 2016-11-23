@@ -27,22 +27,17 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
 
-    if @answer.question.quantitative?
-      logger.info "Quantitative question.  Apply rules based prediction."
+    logger.info "Qualitative question. Querying the PredictionIO server at "+ENV["PIO_#{@answer.question.question_type}_ENGINE"]
 
-      logger.info "Quantitative Prediction complete."
-    else
-      logger.info "Qualitative question. Querying the PredictionIO server at "+ENV["PIO_#{@answer.question.question_type}_ENGINE"]
+    engine_client = PredictionIO::EngineClient.new(ENV["PIO_#{@answer.question.question_type}_ENGINE"])
+    response = JSON.parse engine_client.send_query(text: @answer.content).to_json
+    
+    @answer.confidence = response["confidence"]
+    @answer.category = response["category"]
+    @answer.category_decided_by = "PREDICTIONIO"
 
-      engine_client = PredictionIO::EngineClient.new(ENV["PIO_#{@answer.question.question_type}_ENGINE"])
-      response = JSON.parse engine_client.send_query(text: @answer.content).to_json
-      
-      @answer.confidence = response["confidence"]
-      @answer.category = response["category"]
-      @answer.category_decided_by = "PREDICTIONIO"
-
-      logger.info "Qualitative Prediction Complete.  Response from PredictionIO server -> category:"+@answer.category+", confidence:"+@answer.confidence.to_s
-    end
+    logger.info "Qualitative Prediction Complete.  Response from PredictionIO server -> category:"+@answer.category+", confidence:"+@answer.confidence.to_s
+  
     respond_to do |format|
       if @answer.save
         logger.info "Answer was successfully created."
